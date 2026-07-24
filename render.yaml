@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: telegram-ai-bot
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: node bot.js
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
